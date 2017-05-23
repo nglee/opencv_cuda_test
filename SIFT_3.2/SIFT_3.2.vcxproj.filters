@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="sift_2.4.13.2.cpp">
+    <ClCompile Include="sift_3.2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
