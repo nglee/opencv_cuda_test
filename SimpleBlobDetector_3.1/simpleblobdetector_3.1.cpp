@@ -65,7 +65,7 @@ int main(int argc, const char* argv[])
 		sbd->detect(input_resized, keypoints);
 
 		cv::Mat output;
-		cv::drawKeypoints(input_resized, keypoints, output);
+		cv::drawKeypoints(input_resized, keypoints, output, cv::Scalar_<double>::all(-1), cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
 		cv::imwrite(output_path, output);
 	}
 	return 0;
