@@ -1,0 +1,22 @@
+#pragma once
+
+enum DetectorType {
+	DETECTOR_SIFT = 0,
+	DETECTOR_SURF,
+	DETECTOR_KAZE,
+	DETECTOR_AKAZE,
+	DETECTOR_ORB,
+	DETECTOR_SIZE
+};
+
+enum MatcherType {
+	MATCHER_FLANN = 0,
+	MATCHER_BF,
+	MATCHER_SIZE
+};
+
+enum CommandType {
+	CMD_DETECT = 0,
+	CMD_DETECT_AND_MATCH,
+	CMD_SIZE
+};
