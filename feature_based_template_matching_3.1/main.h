@@ -1,4 +1,5 @@
-#pragma once
+#ifndef FEATURE_BASED_TEMPLATE_MATCHING_3_1_H__
+#define FEATURE_BASED_TEMPLATE_MATCHING_3_1_H__
 
 enum DetectorType {
 	DETECTOR_SIFT = 0,
@@ -6,6 +7,10 @@ enum DetectorType {
 	DETECTOR_KAZE,
 	DETECTOR_AKAZE,
 	DETECTOR_ORB,
+	DETECTOR_BRISK,
+	DETECTOR_AGAST,
+	DETECTOR_FAST,
+	DETECTOR_GFTT,
 	DETECTOR_SIZE
 };
 
@@ -20,3 +25,5 @@ enum CommandType {
 	CMD_DETECT_AND_MATCH,
 	CMD_SIZE
 };
+
+#endif
