@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cvtColor", "cvtColor\cvtCol
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CCL_3.4", "CCL_3.4\CCL_3.4.vcxproj", "{7DBBC81F-DC99-4045-9E0E-8412AEC3248D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cuda_overlapping_memory_copy_with_kernel_3.4", "cuda_overlapping_memory_copy_with_kernel_3.4\cuda_overlapping_memory_copy_with_kernel_3.4.vcxproj", "{F44C8299-4E9D-4CD2-903F-8607A835C6DC}"
+EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cuda_stream_master", "cuda_stream_master\cuda_stream_master.vcxproj", "{CB0277E5-519A-4E35-AE22-CC108CABE6CB}"
 EndProject
 Global
@@ -73,6 +75,14 @@ Global
 		{7DBBC81F-DC99-4045-9E0E-8412AEC3248D}.Release|x64.Build.0 = Release|x64
 		{7DBBC81F-DC99-4045-9E0E-8412AEC3248D}.Release|x86.ActiveCfg = Release|Win32
 		{7DBBC81F-DC99-4045-9E0E-8412AEC3248D}.Release|x86.Build.0 = Release|Win32
+		{F44C8299-4E9D-4CD2-903F-8607A835C6DC}.Debug|x64.ActiveCfg = Debug|x64
+		{F44C8299-4E9D-4CD2-903F-8607A835C6DC}.Debug|x64.Build.0 = Debug|x64
+		{F44C8299-4E9D-4CD2-903F-8607A835C6DC}.Debug|x86.ActiveCfg = Debug|Win32
+		{F44C8299-4E9D-4CD2-903F-8607A835C6DC}.Debug|x86.Build.0 = Debug|Win32
+		{F44C8299-4E9D-4CD2-903F-8607A835C6DC}.Release|x64.ActiveCfg = Release|x64
+		{F44C8299-4E9D-4CD2-903F-8607A835C6DC}.Release|x64.Build.0 = Release|x64
+		{F44C8299-4E9D-4CD2-903F-8607A835C6DC}.Release|x86.ActiveCfg = Release|Win32
+		{F44C8299-4E9D-4CD2-903F-8607A835C6DC}.Release|x86.Build.0 = Release|Win32
 		{CB0277E5-519A-4E35-AE22-CC108CABE6CB}.Debug|x64.ActiveCfg = Debug|x64
 		{CB0277E5-519A-4E35-AE22-CC108CABE6CB}.Debug|x64.Build.0 = Debug|x64
 		{CB0277E5-519A-4E35-AE22-CC108CABE6CB}.Debug|x86.ActiveCfg = Debug|Win32
