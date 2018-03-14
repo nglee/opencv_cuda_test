@@ -3,16 +3,16 @@
 
 int main(int argc, const char* argv[])
 {
-	const cv::Mat input = cv::imread("D:/lenna.png", 0); //Load as grayscale
+    const cv::Mat input = cv::imread("in.jpg", 0); //Load as grayscale
 
-	cv::SiftFeatureDetector detector;
-	std::vector<cv::KeyPoint> keypoints;
-	detector.detect(input, keypoints);
+    cv::SiftFeatureDetector detector;
+    std::vector<cv::KeyPoint> keypoints;
+    detector.detect(input, keypoints);
 
-	// Add results to image and save.
-	cv::Mat output;
-	cv::drawKeypoints(input, keypoints, output);
-	cv::imwrite("D:/lenna_sift_2.4.13.2.jpg", output);
+    // Add results to image and save.
+    cv::Mat output;
+    cv::drawKeypoints(input, keypoints, output);
+    cv::imwrite("out.jpg", output);
 
-	return 0;
+    return 0;
 }
