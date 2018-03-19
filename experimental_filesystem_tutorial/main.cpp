@@ -11,7 +11,7 @@ int main()
     const std::string inDir = "Input/Directory/Path";
     const std::string outDir = "Output/Directory/Path";
     int count = 0;
-                        
+
     for (const auto& p : fs::directory_iterator(inDir))
     {
         const std::string fullPath = p.path().string();                                    // inDir 이하 각 directory_entry 들의 전체 패스
@@ -22,7 +22,7 @@ int main()
 
         if (extension != ".png")
             continue;
-        
+
         const int token = stem.find('_');
         const int mainNum = atoi(stem.substr(0, token).c_str());
         const int minorNum = atoi(stem.substr(token + 1).c_str());
@@ -54,4 +54,16 @@ int main()
 
         std::cout << new_fullPath << std::endl;
     }
+
+    // inDir의 이미지들을 모두 1채널로 바꿔서 outDir에 저장
+    //for (const auto& p : fs::directory_iterator(inDir))
+    //{
+    //    const std::string fullPath = p.path().string();
+    //    const std::string filename = p.path().filename().string();
+    //    const std::string extension = p.path().extension().string();
+    //    if (extension == ".JPG" || extension == ".png") {
+    //        cv::Mat in = cv::imread(fullPath, cv::IMREAD_GRAYSCALE);
+    //        cv::imwrite(outDir + filename, in);
+    //    }
+    //}
 }
