@@ -10,6 +10,8 @@ using namespace cv::cuda;
 
 void test_0()
 {
+    setBufferPoolUsage(true);
+
     BufferPool pool(Stream::Null());
     GpuMat d = pool.getBuffer(512, 512, CV_8UC1);
     d.setTo(Scalar(0));
@@ -23,6 +25,8 @@ void test_0()
 
 void test_1()
 {
+    setBufferPoolUsage(true);
+
     Stream stream = Stream::Null();
     BufferPool pool(stream);
     GpuMat d = pool.getBuffer(512, 512, CV_8UC1);
@@ -37,6 +41,8 @@ void test_1()
 
 void test_2()
 {
+    setBufferPoolUsage(true);
+
     {
         BufferPool pool(Stream::Null());
         GpuMat d = pool.getBuffer(512, 512, CV_8UC1);
@@ -85,6 +91,5 @@ void test_3()
 
 int main()
 {
-    setBufferPoolUsage(true);
     CALL_TEST(TEST_NUM);
 }
