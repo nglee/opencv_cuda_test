@@ -32,14 +32,14 @@ using namespace cv::cuda;
 
 //int main()
 //{
-//	cudaDeviceReset();
+//    cudaDeviceReset();
 //    cudaDeviceSynchronize();
 //
 //    auto tick = high_resolution_clock::now();
 //
-//	const size_t stackSize = stackSizePresets[STACK_SIZE_PRESET_IDX].first;
-//	const size_t size = stackSizePresets[STACK_SIZE_PRESET_IDX].second;
-//	const Size matSize(size, size);
+//    const size_t stackSize = stackSizePresets[STACK_SIZE_PRESET_IDX].first;
+//    const size_t size = stackSizePresets[STACK_SIZE_PRESET_IDX].second;
+//    const Size matSize(size, size);
 //
 //    setBufferPoolUsage(USE_BUFFER_POOL);
 //    if (USE_BUFFER_POOL)
@@ -68,58 +68,58 @@ using namespace cv::cuda;
 
 //int main()
 //{
-//	cudaDeviceSynchronize();
+//    cudaDeviceSynchronize();
 //
-//	setBufferPoolUsage(true);                               // Tell OpenCV that we are going to utilize StackAllocator
-//	setBufferPoolConfig(getDevice(), 1024 * 1024 * 64, 2);  // Allocate 64 MB, 2 stacks (default is 10 MB, 5 stacks)
+//    setBufferPoolUsage(true);                               // Tell OpenCV that we are going to utilize StackAllocator
+//    setBufferPoolConfig(getDevice(), 1024 * 1024 * 64, 2);  // Allocate 64 MB, 2 stacks (default is 10 MB, 5 stacks)
 //
-//	Stream stream1, stream2;                                // Each stream uses 1 stack
-//	BufferPool pool1(stream1), pool2(stream2);
+//    Stream stream1, stream2;                                // Each stream uses 1 stack
+//    BufferPool pool1(stream1), pool2(stream2);
 //
-//	GpuMat d_src1 = pool1.getBuffer(4096, 4096, CV_8UC1);   // 16MB
-//	GpuMat d_dst1 = pool1.getBuffer(4096, 4096, CV_8UC3);   // 48MB, pool1 is full
+//    GpuMat d_src1 = pool1.getBuffer(4096, 4096, CV_8UC1);   // 16MB
+//    GpuMat d_dst1 = pool1.getBuffer(4096, 4096, CV_8UC3);   // 48MB, pool1 is full
 //
-//	GpuMat d_src2 = pool2.getBuffer(1024, 1024, CV_8UC1);   // 1MB
-//	GpuMat d_dst2 = pool2.getBuffer(1024, 1024, CV_8UC3);   // 3MB
+//    GpuMat d_src2 = pool2.getBuffer(1024, 1024, CV_8UC1);   // 1MB
+//    GpuMat d_dst2 = pool2.getBuffer(1024, 1024, CV_8UC3);   // 3MB
 //
-//	cvtColor(d_src1, d_dst1, CV_GRAY2BGR, 0, stream1);
-//	cvtColor(d_src2, d_dst2, CV_GRAY2BGR, 0, stream2);
+//    cvtColor(d_src1, d_dst1, CV_GRAY2BGR, 0, stream1);
+//    cvtColor(d_src2, d_dst2, CV_GRAY2BGR, 0, stream2);
 //
-//	d_src1.release();
+//    d_src1.release();
 //
-//	//GpuMat d_extra1 = pool1.getBuffer(1024, 1024, CV_8UC1); // 1MB, since poo1 is full, this is allocated with the DefaultAllocator
+//    //GpuMat d_extra1 = pool1.getBuffer(1024, 1024, CV_8UC1); // 1MB, since poo1 is full, this is allocated with the DefaultAllocator
 //
-//	//Stream stream3;
-//	//BufferPool pool3(stream3);
+//    //Stream stream3;
+//    //BufferPool pool3(stream3);
 //
-//	//GpuMat d_extra3 = pool3.getBuffer(1024, 1024, CV_8UC1);
+//    //GpuMat d_extra3 = pool3.getBuffer(1024, 1024, CV_8UC1);
 //}
 
 //int main()
 //{
-//	setBufferPoolUsage(true);                               // Tell OpenCV that we are going to utilize BufferPool
-//	setBufferPoolConfig(getDevice(), 1024 * 1024 * 64, 2);  // Allocate 64 MB, 2 stacks (default is 10 MB, 5 stacks)
+//    setBufferPoolUsage(true);                               // Tell OpenCV that we are going to utilize BufferPool
+//    setBufferPoolConfig(getDevice(), 1024 * 1024 * 64, 2);  // Allocate 64 MB, 2 stacks (default is 10 MB, 5 stacks)
 //
-//	Stream stream1, stream2;                                // Each stream uses 1 stack
-//	BufferPool pool1(stream1), pool2(stream2);
+//    Stream stream1, stream2;                                // Each stream uses 1 stack
+//    BufferPool pool1(stream1), pool2(stream2);
 //
-//	for (int i = 0; i < 10; i++)
-//	{
-//		GpuMat d_src1 = pool1.getBuffer(4096, 4096, CV_8UC1);   // 16MB
-//		GpuMat d_dst1 = pool1.getBuffer(4096, 4096, CV_8UC3);   // 48MB, pool1 is now full
+//    for (int i = 0; i < 10; i++)
+//    {
+//        GpuMat d_src1 = pool1.getBuffer(4096, 4096, CV_8UC1);   // 16MB
+//        GpuMat d_dst1 = pool1.getBuffer(4096, 4096, CV_8UC3);   // 48MB, pool1 is now full
 //
-//		GpuMat d_src2 = pool2.getBuffer(1024, 1024, CV_8UC1);   // 1MB
-//		GpuMat d_dst2 = pool2.getBuffer(1024, 1024, CV_8UC3);   // 3MB
+//        GpuMat d_src2 = pool2.getBuffer(1024, 1024, CV_8UC1);   // 1MB
+//        GpuMat d_dst2 = pool2.getBuffer(1024, 1024, CV_8UC3);   // 3MB
 //
-//		d_src1.setTo(Scalar(i), stream1);
-//		d_src2.setTo(Scalar(i), stream2);
+//        d_src1.setTo(Scalar(i), stream1);
+//        d_src2.setTo(Scalar(i), stream2);
 //
-//		cvtColor(d_src1, d_dst1, CV_GRAY2BGR, 0, stream1);
-//		cvtColor(d_src2, d_dst2, CV_GRAY2BGR, 0, stream2);
-//		// Order of destruction of the local variables is:
-//		//   d_dst2 => d_src2 => d_dst1 => d_src1
-//		// LIFO rule is satisfied, this code runs without error
-//	}
+//        cvtColor(d_src1, d_dst1, CV_GRAY2BGR, 0, stream1);
+//        cvtColor(d_src2, d_dst2, CV_GRAY2BGR, 0, stream2);
+//        // Order of destruction of the local variables is:
+//        //   d_dst2 => d_src2 => d_dst1 => d_src1
+//        // LIFO rule is satisfied, this code runs without error
+//    }
 //}
 
 //int main()
