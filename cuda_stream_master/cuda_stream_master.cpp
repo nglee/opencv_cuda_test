@@ -12,34 +12,22 @@ void test_0()
 {
     setBufferPoolUsage(true);
 
-    BufferPool pool(Stream::Null());
-    GpuMat d = pool.getBuffer(512, 512, CV_8UC1);
-    d.setTo(Scalar(0));
+    {
+        BufferPool pool(Stream::Null());
+        GpuMat d = pool.getBuffer(512, 512, CV_8UC1);
+        d.setTo(Scalar(0));
+    }
 
     resetDevice();
 
-    BufferPool pool2(Stream::Null());
-    d = pool2.getBuffer(512, 512, CV_8UC1);
-    d.setTo(Scalar(255));
+    {
+        BufferPool pool(Stream::Null());
+        GpuMat d = pool.getBuffer(512, 512, CV_8UC1);
+        d.setTo(Scalar(255));
+    }
 }
 
 void test_1()
-{
-    setBufferPoolUsage(true);
-
-    Stream stream = Stream::Null();
-    BufferPool pool(stream);
-    GpuMat d = pool.getBuffer(512, 512, CV_8UC1);
-    d.setTo(Scalar(0));
-
-    resetDevice();
-
-    BufferPool pool2(stream);
-    d = pool2.getBuffer(512, 512, CV_8UC1);
-    d.setTo(Scalar(255));
-}
-
-void test_2()
 {
     setBufferPoolUsage(true);
 
@@ -52,13 +40,14 @@ void test_2()
     resetDevice();
 
     {
-        BufferPool pool2(Stream::Null());
-        GpuMat d = pool2.getBuffer(512, 512, CV_8UC1);
+        Stream stream;
+        BufferPool pool(stream);
+        GpuMat d = pool.getBuffer(512, 512, CV_8UC1);
         d.setTo(Scalar(255));
     }
 }
 
-void test_3()
+void test_2()
 {
     setBufferPoolUsage(true);
 
@@ -87,6 +76,36 @@ void test_3()
     d.download(out);
     imshow("out", out);    // We expect to see test512x512T.png, but contrary to our expectation, the bottom half of test512x1024.png will be displayed.
     waitKey(0);
+}
+
+#include <omp.h>
+
+void test_3()
+{
+    setBufferPoolUsage(true);
+
+    #pragma omp parallel num_threads(64)
+    {
+        Mat h;
+        h = imread("./test512x1024.png", IMREAD_GRAYSCALE);
+
+        GpuMat d_(h.size(), CV_8UC1);
+        GpuMat d(h.size(), CV_64FC1);
+
+        d_.upload(h);
+        d_.convertTo(d, CV_64F, 1.0 / 255.0);
+
+        GpuMat out;
+        cv::cuda::calcNorm(d, out, NORM_L2);
+
+        Mat h_out;
+        out.download(h_out);
+
+        #pragma omp critical
+        {
+            std::cout << "(" << std::setw(2) << omp_get_thread_num() << "): " << h_out.at<double>(0, 0) << std::endl;
+        }
+    }
 }
 
 int main()
