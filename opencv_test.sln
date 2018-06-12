@@ -29,6 +29,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BufferPool_master", "Buffer
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cuda_stream_master_2_9.2", "cuda_stream_master_2_9.2\cuda_stream_master_2_9.2.vcxproj", "{F355AFEE-50FD-416D-9A65-599F52F0D297}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "boost_interprocess_delete_destroy_tester", "boost_interprocess_delete_destroy_tester\boost_interprocess_delete_destroy_tester.vcxproj", "{1FACEC75-0CA0-4372-8ED4-1809DDEE8CFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -137,6 +139,14 @@ Global
 		{F355AFEE-50FD-416D-9A65-599F52F0D297}.Release|x64.ActiveCfg = Release|x64
 		{F355AFEE-50FD-416D-9A65-599F52F0D297}.Release|x64.Build.0 = Release|x64
 		{F355AFEE-50FD-416D-9A65-599F52F0D297}.Release|x86.ActiveCfg = Release|x64
+		{1FACEC75-0CA0-4372-8ED4-1809DDEE8CFF}.Debug|x64.ActiveCfg = Debug|x64
+		{1FACEC75-0CA0-4372-8ED4-1809DDEE8CFF}.Debug|x64.Build.0 = Debug|x64
+		{1FACEC75-0CA0-4372-8ED4-1809DDEE8CFF}.Debug|x86.ActiveCfg = Debug|Win32
+		{1FACEC75-0CA0-4372-8ED4-1809DDEE8CFF}.Debug|x86.Build.0 = Debug|Win32
+		{1FACEC75-0CA0-4372-8ED4-1809DDEE8CFF}.Release|x64.ActiveCfg = Release|x64
+		{1FACEC75-0CA0-4372-8ED4-1809DDEE8CFF}.Release|x64.Build.0 = Release|x64
+		{1FACEC75-0CA0-4372-8ED4-1809DDEE8CFF}.Release|x86.ActiveCfg = Release|Win32
+		{1FACEC75-0CA0-4372-8ED4-1809DDEE8CFF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
