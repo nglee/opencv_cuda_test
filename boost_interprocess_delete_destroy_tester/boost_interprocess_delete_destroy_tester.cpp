@@ -45,7 +45,7 @@ void first_process(smem_t *shm)
     std::cout << std::to_string(pid) << ": gMutex, gSema1&2 created, will wait for gSema1 post" << std::endl;
     sema1->wait();
     std::cout << std::to_string(pid) << ": gSema1 post recieved, will delete gMutex" << std::endl;
-    delete mtx;
+    delete mtx; // crashes, if shm->destroy_ptr(mtx), does not crash (https://stackoverflow.com/a/51335826/7724939)
     std::cout << std::to_string(pid) << ": gMutex deleted, will post gSema2" << std::endl;
     sema2->post();
     std::cout << std::to_string(pid) << ": gSema2 posted, will delete sema1&2" << std::endl;
