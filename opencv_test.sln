@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SIFT_2.4.13.2", "SIFT_2.4.13.2\SIFT_2.4.13.2.vcxproj", "{7F08A326-3E53-41B4-907A-C4E0D252F570}"
 EndProject
@@ -42,6 +42,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImageResize_4.1.0", "ImageResize_4.1.0\ImageResize_4.1.0.vcxproj", "{CD8019EE-0DFC-446E-A95F-33A65BD5FFC5}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "merge_test_4.1.0", "merge_test_4.1.0\merge_test_4.1.0.vcxproj", "{D86EE422-0E48-4835-8BDF-28F13AF72AB0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cuda_matmul_10.2", "cuda_matmul_10.2\cuda_matmul_10.2.vcxproj", "{A920B02B-3172-4628-9ABB-88D5BA905112}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "boost_interprocess_managed_smem_tester", "boost_interprocess_managed_smem_tester\boost_interprocess_managed_smem_tester.vcxproj", "{8D7A8818-78B2-4DD6-A650-B9236C19F19B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -205,8 +209,25 @@ Global
 		{D86EE422-0E48-4835-8BDF-28F13AF72AB0}.Release|x64.Build.0 = Release|x64
 		{D86EE422-0E48-4835-8BDF-28F13AF72AB0}.Release|x86.ActiveCfg = Release|Win32
 		{D86EE422-0E48-4835-8BDF-28F13AF72AB0}.Release|x86.Build.0 = Release|Win32
+		{A920B02B-3172-4628-9ABB-88D5BA905112}.Debug|x64.ActiveCfg = Debug|x64
+		{A920B02B-3172-4628-9ABB-88D5BA905112}.Debug|x64.Build.0 = Debug|x64
+		{A920B02B-3172-4628-9ABB-88D5BA905112}.Debug|x86.ActiveCfg = Debug|x64
+		{A920B02B-3172-4628-9ABB-88D5BA905112}.Release|x64.ActiveCfg = Release|x64
+		{A920B02B-3172-4628-9ABB-88D5BA905112}.Release|x64.Build.0 = Release|x64
+		{A920B02B-3172-4628-9ABB-88D5BA905112}.Release|x86.ActiveCfg = Release|x64
+		{8D7A8818-78B2-4DD6-A650-B9236C19F19B}.Debug|x64.ActiveCfg = Debug|x64
+		{8D7A8818-78B2-4DD6-A650-B9236C19F19B}.Debug|x64.Build.0 = Debug|x64
+		{8D7A8818-78B2-4DD6-A650-B9236C19F19B}.Debug|x86.ActiveCfg = Debug|Win32
+		{8D7A8818-78B2-4DD6-A650-B9236C19F19B}.Debug|x86.Build.0 = Debug|Win32
+		{8D7A8818-78B2-4DD6-A650-B9236C19F19B}.Release|x64.ActiveCfg = Release|x64
+		{8D7A8818-78B2-4DD6-A650-B9236C19F19B}.Release|x64.Build.0 = Release|x64
+		{8D7A8818-78B2-4DD6-A650-B9236C19F19B}.Release|x86.ActiveCfg = Release|Win32
+		{8D7A8818-78B2-4DD6-A650-B9236C19F19B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {822D1184-2223-416F-B85F-2FD13A7348C0}
 	EndGlobalSection
 EndGlobal
