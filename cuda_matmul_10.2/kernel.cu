@@ -18,16 +18,8 @@ void _check(T result, char const* const func, char const* const file, int const 
 }
 #define checkCudaErrors(val) _check((val), #val, __FILE__, __LINE__)
 
-cudaError_t addWithCuda(int *c, const int *a, const int *b, unsigned int size);
-
-__global__ void addKernel(int *c, const int *a, const int *b)
-{
-    int i = threadIdx.x;
-    c[i] = a[i] + b[i];
-}
-
 __global__
-void matmul(float const* A, float const* B, float* C)
+void matmul(const float* A, const float* B, float* C)
 {
     
 }
