@@ -55,6 +55,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "float_epsilon_test", "float
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cublas_memory_leak_11.1.1", "cublas_memory_leak_11.1.1\cublas_memory_leak_11.1.1.vcxproj", "{FC53C3F5-8928-4DE2-B36D-0FE27E16CB44}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cudnn_conv_forward_8.0.5_11.1.1", "cudnn_conv_forward_8.0.5_11.1.1\cudnn_conv_forward_8.0.5_11.1.1.vcxproj", "{7ED67616-9F47-4440-9DCF-914973AA2224}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -257,6 +259,14 @@ Global
 		{FC53C3F5-8928-4DE2-B36D-0FE27E16CB44}.Release|x64.ActiveCfg = Release|x64
 		{FC53C3F5-8928-4DE2-B36D-0FE27E16CB44}.Release|x64.Build.0 = Release|x64
 		{FC53C3F5-8928-4DE2-B36D-0FE27E16CB44}.Release|x86.ActiveCfg = Release|x64
+		{7ED67616-9F47-4440-9DCF-914973AA2224}.Debug|x64.ActiveCfg = Debug|x64
+		{7ED67616-9F47-4440-9DCF-914973AA2224}.Debug|x64.Build.0 = Debug|x64
+		{7ED67616-9F47-4440-9DCF-914973AA2224}.Debug|x86.ActiveCfg = Debug|Win32
+		{7ED67616-9F47-4440-9DCF-914973AA2224}.Debug|x86.Build.0 = Debug|Win32
+		{7ED67616-9F47-4440-9DCF-914973AA2224}.Release|x64.ActiveCfg = Release|x64
+		{7ED67616-9F47-4440-9DCF-914973AA2224}.Release|x64.Build.0 = Release|x64
+		{7ED67616-9F47-4440-9DCF-914973AA2224}.Release|x86.ActiveCfg = Release|Win32
+		{7ED67616-9F47-4440-9DCF-914973AA2224}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
